@@ -4,6 +4,14 @@ require_once("Model.php");
 
 class ModelClient extends Model {
 
+  //private $idClient;
+  //private $nomClient;
+  //private $prenomClient;
+  //private $email;
+  //private $mdp;
+  //private $dateInscription;
+
+
   public static function getAllClients(){
     $sql = "SELECT * FROM Clients ORDER BY idClient;";
     return Model::fetchDB($sql);
@@ -19,13 +27,14 @@ class ModelClient extends Model {
       return Model::fetchDB($sql);
   }
 
-  public static function addClient($nom, $prenom, $email, $mdp){
-    $req = self::$pdo->prepare("INSERT INTO Clients(nomClient, prenomClient, email, mdp) VALUES(:nom, :prenom, :email, :mdp)");
+  public static function addClient($nom, $prenom, $email, $mdp, $dateIns){
+    $req = self::$pdo->prepare("INSERT INTO Clients(nomClient, prenomClient, email, mdp, dateInscription) VALUES(:nom, :prenom, :email, :mdp, :dateIns)");
     $req->execute(array(
       "nom" => $nom,
       "prenom" => $prenom,
       "email" => $email,
-      "mdp" => $mdp
+      "mdp" => $mdp,
+      "dateIns" => $dateIns
     ));
   }
 

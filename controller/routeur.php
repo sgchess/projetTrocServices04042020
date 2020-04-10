@@ -1,5 +1,8 @@
 <?php
 
+// insertion de fichiers utiles
+require_once("lib/Util.php");
+
 // insertion des classes Controller...
 require_once("ControllerClient.php");
 
