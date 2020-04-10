@@ -8,6 +8,7 @@
 	<?php 
 		require_once("menu.php");
 		require_once($view);
+		require_once("footer.php");
 	?>
 </body>
 </html>

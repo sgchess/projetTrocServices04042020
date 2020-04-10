@@ -10,7 +10,7 @@ class ControllerClient{
     $res = ModelClient::getAll("Clients","ModelClient");
     // puis il convoque la view "clients/list.php"
     // qui se chargera de l'affichage de $res
-    // ancienne version : require("view/clients/list.php");
+    //require("view/clients/list.php");
     $view = "clients/list.php";
     require("view/view.php");
 
@@ -23,11 +23,15 @@ class ControllerClient{
     $clt = ModelClient::getClientByNom($nom,"ModelClient");
     // puis il convoque la view "clients/detail.php"
     // qui se chargera de l'affichage de $clt
-    require("view/clients/detail.php");
+    //require("view/clients/detail.php");
+    $view = "clients/detail.php";
+    require("view/view.php");
   }
 
   public static function create() {
-    require("view/clients/create.php");
+    //require("view/clients/create.php");
+    $view = "clients/create.php";
+    require("view/view.php");
   }
 
   public static function created() {
